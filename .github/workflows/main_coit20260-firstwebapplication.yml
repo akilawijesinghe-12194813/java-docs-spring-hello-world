@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'COIT20260-FirstWebApplication'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8077FFE4A38C4A989CCA3A9FAB659E9F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_696172817E5C463294B50EB699187DE3 }}
           package: '*.jar'
