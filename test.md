@@ -1,426 +1,856 @@
-Certainly, here is the information you provided in a two-column table for each case:
-
-**List Users**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | View all registered users          |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /users                             |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 403, 500                       |
-
-**Get User Details**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Retrieve user profile data         |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /users/<id>                        |
-| Parameters                            | id (User ID)                       |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 500, 403                       |
-
-**Create User**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Register users                     |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /users/register                     |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 500, 550                       |
-
-**Update User**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Update user profile data           |
-| HTTP Method                           | PUT                                |
-| API Pattern                           | /users/<id>                        |
-| Parameters                            | id (User ID)                       |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Delete User**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Change user's status as 'Inactive' |
-| HTTP Method                           | DELETE                             |
-| API Pattern                           | /users/<id>                        |
-| Parameters                            | id (User ID)                       |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Assign Role**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Assigning user privileges           |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /users/assign/<id>                 |
-| Parameters                            | id (User ID)                       |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 403, 500                            |
-
-
-Certainly, here's the information you provided in a two-column table format for each case:
-
-**Search User**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search a User                      |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /users                             |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 403, 404, 500                  |
-
-**Create HSC**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Register healthcare service center |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /hsc                               |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                             |
-| Response Error Codes                  | 400, 500, 400                       |
-
-**List HSC**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | View all HSC's data                |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /hsc                               |
-| Parameters                            | None                               |
-| FHIR Compliance                       | Yes (https://facilityregistry.health.gov.lk/fhir/Organization) |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 500                            |
-
-**Update HSC**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Update HSC data such as name change and grade upgrade |
-| HTTP Method                           | PUT                                |
-| API Pattern                           | /hsc/<id>                          |
-| Parameters                            | id (HSC ID)                        |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Delete HSC**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Change HSC's status as 'Inactive'   |
-| HTTP Method                           | DELETE                             |
-| API Pattern                           | /hsc/<id>                          |
-| Parameters                            | id (HSC ID)                        |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Search HSC**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search HSC                         |
-| HTTP Method                           | GET                                |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Search a list of organizations under ID 2223**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search a list of organizations under ID 2223 |
-| HTTP Method                           | GET                                |
-| FHIR Compliance                       | Yes (https://facilityregistry.health.gov.lk/fhir/Organization?partof=2223) |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Search organizations with exact name "Base Hospital, Kamburupitiya"**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search organizations with the exact name "Base Hospital, Kamburupitiya" |
-| HTTP Method                           | GET                                |
-| FHIR Compliance                       | Yes (https://facilityregistry.health.gov.lk/fhir/Organization?name:exact=Base%20Hospital,%20Kamburupitiya) |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Search organizations with name like "Kamburupitiya"**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search organizations with names containing "Kamburupitiya" |
-| HTTP Method                           | GET                                |
-| FHIR Compliance                       | Yes (https://facilityregistry.health.gov.lk/fhir/Organization?name:contains=Kamburupitiya) |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Create Unit**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Create a location under an organization |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /unit                              |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 500, 400                       |
-
-**List Unit under an organization**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | View all locations under an organization |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /unit                              |
-| Parameters                            | organization=<Organization_ID>     |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 500                            |
-
-**Update Unit**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Update a location under an organization |
-| HTTP Method                           | PUT                                |
-| API Pattern                           | /unit/<id>                         |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 403, 404, 500                  |
-
-**Delete Unit**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Delete a location under an organization |
-| HTTP Method                           | DELETE                             |
-| API Pattern                           | /unit/<id>                         |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Search Locations with exact name "Medical Clinic, DH Baddegama"**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search a location with the exact name "Medical Clinic, DH Baddegama" |
-| HTTP Method                           | GET                                |
-| FHIR Compliance                       | Yes (https://facilityregistry.health.gov.lk/fhir/Location?name:exact=Medical%20Clinic,%20DH%20Baddegama) |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Search Location**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search a location                   |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /location                           |
-| Parameters                            | name:contains=HLC%20Rathgama       |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Search Locations of type HLC**
-
-| Property                             
-
- | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search location based on its type  |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /location?type=HLC                 |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Public                            |
-| Response Error Codes                  | 400, 404, 500                       |
-
-**Create DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Generate data change request for HSC and Users |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /dcr                               |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 500, 400                       |
-
-**List DCRs**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | View all data change requests       |
-| HTTP Method                           | GET                                |
-| API Pattern                           | /dcr                               |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 500                            |
-
-**Approve/Reject DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | DCR can be rejected or approved by super administrator or administrator |
-| HTTP Method                           | POST                               |
-| API Pattern                           | /dcr/status/<id>                   |
-| Parameters                            | id (DCR ID)                        |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 400, 500                            |
-
-**Forward DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | DCR can be recommended and forwarded to the next upper level for further action |
-| HTTP Method                           | To be filled                        |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | To be filled                        |
-
-**Update DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | DCR can be edited by registered users before forwarding it |
-| HTTP Method                           | PUT                                |
-| API Pattern                           | /dcr/<id>                          |
-| Parameters                            | id (DCR ID)                        |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Delete DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | The status of DCR can be changed as 'Active' or 'Inactive' by super administrator or administrator |
-| HTTP Method                           | DELETE                             |
-| API Pattern                           | /dcr/<id>                          |
-| Parameters                            | id (DCR ID)                        |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | 403, 404, 500                       |
-
-**Archive DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | All DCRs should be archived for auditing purposes |
-| HTTP Method                           | POST                               |
-| API Pattern                           | To be filled                        |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | To be filled                        |
-
-**Search DCR**
-
-| Property                              | Value                              |
-|---------------------------------------|------------------------------------|
-| Description                           | Search 'Data Change Request'       |
-| HTTP Method                           | GET                                |
-| Parameters                            | None                               |
-| FHIR Compliance                       | No                                 |
-| API Pattern Visibility (Public/Private)| Private                            |
-| Response Error Codes                  | To be filled                        |
-
-### 9.2 API Pattern for Data Fields
-
-**HSC Management Data Fields**
-
-- Institution Code
-- Other ID
-- Official Name
-- Other Name
-- Health Institution Type
-- Divisional Secretariat Division
-- MOH Area
-- Parent Organization
-- Ownership
-- T.P No
-- Address
-- Operational Status
-- Latitude
-- Longitude
-
-**Unit Management Data Fields**
-
-- Unit code
-- Unit name
-- Other name
-- Description
-- Mode
-- Type
-- Contact number
-- Address
-- Physical form
-- Status
-
-**User Management Data Fields**
-
-- User ID
-- Name
-- NIC No.
-- Designation
-- User Type
-- Assigned Roles
-- Contact Number
-- Email Address
-- Address
-- Gender
-- Name of Health Institution
-- Address of Health Institution
-- Status
-- HSC DCR HSC ID
-- Requester Name
-- Requester ID / NIC
-- Requester Contact Number
-- Requester Email Address
-- Description for Change
-- Reason for Change
-- Any Official Documents regarding this request
-- Remarks
-
-**User Profile DCR Data Fields**
-
-- DCR ID
-- Requester Name
-- Requester ID / NIC
-- User name to be changed / edited
-- User ID to be changed / edited
-- Description of Change
-- Reason for Change
-- Any Official Documents regarding this request
-- Remarks
-
-This comprehensive API documentation includes details of API endpoints, their descriptions, HTTP methods, parameters, FHIR compliance, visibility, response error codes, and data fields for different modules.
+Certainly! Here are the REST API representations for all the tables with sample request body JSON and response body JSON:
+
+**List Users:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/users` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "userID": "USR123",
+    "name": "John Doe",
+    "designation": "Data Entry Operator",
+    "userType": "Data Entry Operator",
+    "contactNumber": "+1234567890",
+    "emailAddress": "john.doe@example.com",
+    "status": "Active"
+  },
+  {
+    "userID": "USR456",
+    "name": "Jane Smith",
+    "designation": "Data Approver",
+    "userType": "Data Approver",
+    "contactNumber": "+9876543210",
+    "emailAddress": "jane.smith@example.com",
+    "status": "Active"
+  }
+]
+```
+
+**Get User Details:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/users/USR123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "userID": "USR123",
+  "name": "John Doe",
+  "designation": "Data Entry Operator",
+  "userType": "Data Entry Operator",
+  "contactNumber": "+1234567890",
+  "emailAddress": "john.doe@example.com",
+  "status": "Active"
+}
+```
+
+**Create User:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/users/register` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "name": "John Doe",
+  "NIC No.": "1234567890",
+  "designation": "Data Entry Operator",
+  "userType": "Data Entry Operator",
+  "assignedRoles": ["Data Entry Operator", "Data Approver"],
+  "contactNumber": "+1234567890",
+  "emailAddress": "john.doe@example.com",
+  "address": "123 Main Street, City, Country",
+  "gender": "Male",
+  "nameOfHealthInstitution": "City Hospital",
+  "addressOfHealthInstitution": "456 Hospital Road, City, Country",
+  "status": "Active",
+  "HSC DCR HSC ID": "HSC123",
+  "requesterName": "Jane Smith",
+  "requesterIDNIC": "9876543210",
+  "requesterContactNumber": "+9876543210",
+  "requesterEmailAddress": "jane.smith@example.com",
+  "descriptionForChange": "User role change to Data Approver",
+  "reasonForChange": "Government decision",
+  "anyOfficialDocuments": ["document1.pdf", "document2.docx"],
+  "remarks": "No additional remarks"
+}
+```
+
+| Response | 
+| Status | 201 Created |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "User 'John Doe' registered successfully.",
+  "userID": "USR7890"
+}
+```
+
+**Update User:**
+
+| Property | Value |
+| --- | --- |
+| Method | PUT |
+| URL | `/users/USR123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "name": "Updated John Doe",
+  "designation": "Data Approver",
+  "userType": "Data Approver",
+  "contactNumber": "+9876543210",
+  "emailAddress": "updated.john.doe@example.com",
+  "status": "Active"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "User 'John Doe' updated successfully."
+}
+```
+
+**Delete User:**
+
+| Property | Value |
+| --- | --- |
+| Method | DELETE |
+| URL | `/users/USR123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 204 No Content |
+
+**Assign Role:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/users/USR123/assign-role` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "role": "Data Approver"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Role 'Data Approver' assigned to user 'John Doe'."
+}
+```
+
+**Search User:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/users?name:contains=John%20Doe` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "userID": "USR123",
+    "name": "John Doe",
+    "designation": "Data Entry Operator",
+    "userType": "Data Entry Operator",
+    "contactNumber": "+1234567890",
+    "emailAddress": "john.doe@example.com",
+    "status": "Active"
+  }
+]
+```
+
+**Create HSC:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/hsc` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "officialName": "City Hospital",
+  "otherName": "Downtown Clinic",
+  "healthInstitutionType": "National",
+  "divisionalSecretariatDivision": "City Division",
+  "MOHArea": "Central MOH Area",
+ 
+
+ "parentOrganization": "Health Ministry",
+  "ownership": "Public",
+  "contactNumber": "+1234567890",
+  "address": "456 Hospital Road, City, Country",
+  "operationalStatus": "Active",
+  "latitude": 123.456,
+  "longitude": 45.678
+}
+```
+
+| Response | 
+| Status | 201 Created |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Healthcare Service Center 'City Hospital' registered successfully.",
+  "hscID": "HSC123"
+}
+```
+
+**List HSC:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/hsc` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "hscID": "HSC123",
+    "officialName": "City Hospital",
+    "otherName": "Downtown Clinic",
+    "healthInstitutionType": "National",
+    "divisionalSecretariatDivision": "City Division",
+    "MOHArea": "Central MOH Area",
+    "parentOrganization": "Health Ministry",
+    "ownership": "Public",
+    "contactNumber": "+1234567890",
+    "address": "456 Hospital Road, City, Country",
+    "operationalStatus": "Active"
+  }
+]
+```
+
+**Update HSC:**
+
+| Property | Value |
+| --- | --- |
+| Method | PUT |
+| URL | `/hsc/HSC123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "officialName": "Updated City Hospital",
+  "operationalStatus": "Inactive"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Healthcare Service Center 'City Hospital' updated successfully."
+}
+```
+
+**Delete HSC:**
+
+| Property | Value |
+| --- | --- |
+| Method | DELETE |
+| URL | `/hsc/HSC123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 204 No Content |
+
+**Search HSC:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/hsc?name:exact=City%20Hospital` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "hscID": "HSC123",
+    "officialName": "City Hospital",
+    "otherName": "Downtown Clinic",
+    "healthInstitutionType": "National",
+    "divisionalSecretariatDivision": "City Division",
+    "MOHArea": "Central MOH Area",
+    "parentOrganization": "Health Ministry",
+    "ownership": "Public",
+    "contactNumber": "+1234567890",
+    "address": "456 Hospital Road, City, Country",
+    "operationalStatus": "Active"
+  }
+]
+```
+
+**Search Organizations Under ID 2223:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/organizations/2223` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "organizationID": "ORG2223",
+  "name": "Base Hospital, Kamburupitiya",
+  "type": "Hospital",
+  "contactNumber": "+9876543210",
+  "address": "123 Hospital Street, Kamburupitiya, Country",
+  "status": "Active"
+}
+```
+
+**Search Organizations with Exact Name "Base Hospital, Kamburupitiya":**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/organizations?name:exact=Base%20Hospital,%20Kamburupitiya` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "organizationID": "ORG2223",
+    "name": "Base Hospital, Kamburupitiya",
+    "type": "Hospital",
+    "contactNumber": "+9876543210",
+    "address": "123 Hospital Street, Kamburupitiya, Country",
+    "status": "Active"
+  }
+]
+```
+
+**Search Organizations with Name Like "Kamburupitiya":**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/organizations?name:contains=Kamburupitiya` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "organizationID": "ORG2223",
+    "name": "Base Hospital, Kamburupitiya",
+    "type": "Hospital",
+    "contactNumber": "+9876543210",
+    "address": "123 Hospital Street, Kamburupitiya, Country",
+    "status": "Active"
+  }
+]
+```
+
+**Create Unit:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/unit` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "unitCode": "UNIT123",
+  "unitName": "Emergency Ward",
+  "otherName": "ER Ward",
+  "description": "Emergency care unit",
+  "mode": "Ward",
+  "type": "Emergency",
+  "contactNumber": "+1234567890",
+  "address": "789 Hospital Wing, City
+
+, Country",
+  "physicalForm": "Building",
+  "status": "Active"
+}
+```
+
+| Response | 
+| Status | 201 Created |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Unit 'Emergency Ward' created successfully.",
+  "unitID": "UNIT123"
+}
+```
+
+**List Units Under an Organization:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/organizations/ORG2223/units` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application/json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "unitID": "UNIT123",
+    "unitCode": "Emergency Ward",
+    "unitName": "ER Ward",
+    "description": "Emergency care unit",
+    "mode": "Ward",
+    "type": "Emergency",
+    "status": "Active"
+  }
+]
+```
+
+**Update Unit:**
+
+| Property | Value |
+| --- | --- |
+| Method | PUT |
+| URL | `/unit/UNIT123` |
+| Headers | 
+| - Content-Type | application/json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "unitName": "Updated Emergency Ward",
+  "status": "Inactive"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Unit 'Emergency Ward' updated successfully."
+}
+```
+
+**Delete Unit:**
+
+| Property | Value |
+| --- | --- |
+| Method | DELETE |
+| URL | `/unit/UNIT123` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 204 No Content |
+
+**Search Locations with Exact Name "Medical Clinic, DH Baddegama":**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/locations?name:exact=Medical%20Clinic,%20DH%20Baddegama` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "locationID": "LOC123",
+    "name": "Medical Clinic, DH Baddegama",
+    "type": "HLC",
+    "contactNumber": "+9876543210",
+    "address": "456 Clinic Street, DH Baddegama, Country",
+    "status": "Active"
+  }
+]
+```
+
+**Search Locations:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/locations?name:contains=Medical%20Clinic` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "locationID": "LOC123",
+    "name": "Medical Clinic, DH Baddegama",
+    "type": "HLC",
+    "contactNumber": "+9876543210",
+    "address": "456 Clinic Street, DH Baddegama, Country",
+    "status": "Active"
+  }
+]
+```
+
+**Search Locations of Type HLC:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/locations?type:exact=HLC` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "locationID": "LOC123",
+    "name": "Medical Clinic, DH Baddegama",
+    "type": "HLC",
+    "contactNumber": "+9876543210",
+    "address": "456 Clinic Street, DH Baddegama, Country",
+    "status": "Active"
+  }
+]
+```
+
+**Create DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/dcr` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "requesterName": "Jane Smith",
+  "requesterIDNIC": "9876543210",
+  "userNameToBeChangedEdited": "John Doe",
+  "userIDToBeChangedEdited": "USR123",
+  "descriptionOfChange": "User role change to Data Approver",
+  "reasonForChange": "Government decision",
+  "anyOfficialDocuments": ["document1.pdf", "document2.docx"],
+  "remarks": "No additional remarks"
+}
+```
+
+| Response | 
+| Status | 201 Created |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Data Change Request created successfully.",
+  "dcrID": "DCR123"
+}
+```
+
+**List DCRs:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/dcr` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "dcrID": "DCR123",
+    "requesterName": "Jane Smith",
+    "descriptionOfChange": "User role change to Data Approver",
+    "status": "Pending"
+  }
+]
+```
+
+**Approve/Reject DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/dcr/DCR123/approve` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "approvalStatus": "Approved"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type |
+
+ application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Data Change Request 'DCR123' has been approved."
+}
+```
+
+**Forward DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/dcr/DCR123/forward` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "forwardToUserID": "USR456"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Data Change Request 'DCR123' has been forwarded to user 'Jane Smith'."
+}
+```
+
+**Update DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | PUT |
+| URL | `/dcr/DCR123` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | 
+```json
+{
+  "descriptionOfChange": "Updated user role to Data Reviewer"
+}
+```
+
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Data Change Request 'DCR123' updated successfully."
+}
+```
+
+**Delete DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | DELETE |
+| URL | `/dcr/DCR123` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 204 No Content |
+
+**Archive DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | POST |
+| URL | `/dcr/DCR123/archive` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+{
+  "status": "Success",
+  "message": "Data Change Request 'DCR123' has been archived."
+}
+```
+
+**Search DCR:**
+
+| Property | Value |
+| --- | --- |
+| Method | GET |
+| URL | `/dcr?requesterName:contains=Jane%20Smith` |
+| Headers | 
+| - Content-Type | application.json |
+| - Authorization | Bearer \<Your_Auth_Token\> |
+| Request Body (JSON) | None |
+| Response | 
+| Status | 200 OK |
+| Headers | 
+| - Content-Type | application.json |
+| Response Body (JSON) | 
+```json
+[
+  {
+    "dcrID": "DCR123",
+    "requesterName": "Jane Smith",
+    "descriptionOfChange": "User role change to Data Reviewer",
+    "status": "Pending"
+  }
+]
+```
+
+These REST API representations provide examples of requests and responses for each of the tables based on the provided information.
